@@ -12,7 +12,7 @@ ranges = [(df['Age'] <= 20), (df['Age'] > 20) & (df['Age'] <= 40), (df['Age'] > 
 
 indexes = [0, 1, 2, 3]
 
-df['Age Range'] = np.select(ranges, indexes)
+df['Age Range'] = np.select(ranges, indexes, np.nan)
 
 sum_category = [(df['Age Range'] == 0).sum(), (df['Age Range'] == 1).sum(), (df['Age Range'] == 2).sum(), (df['Age Range'] == 3).sum()]
 
