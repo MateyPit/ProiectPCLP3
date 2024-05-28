@@ -27,3 +27,26 @@ plt.xlabel("Age ranges")
 plt.ylabel("Number of Passengers")
 range_bar.savefig("RangeGraph")
 
+# Task 6
+
+men_rates = []
+
+for i in indexes:
+    men_rates.append(((df['Age Range'] == i) & (df['Sex'] == 'male') & (df['Survived'] == 1)).sum())
+
+for i in indexes:
+    total_men = ((df['Age Range'] == i) & (df['Sex'] == 'male')).sum()
+    men_rates[i] = round(men_rates[i] / total_men * 100, 2)
+
+print('Chance of survival for men in different age ranges:')
+for i in indexes:
+    print(f'Men who were {graph_ranges[i]} years old: {men_rates[i]}%')
+
+men_survival = plt.figure()
+plt.bar(graph_ranges, men_rates)
+plt.title('Rate of survival for men in different age groups')
+plt.ylim(0, 100)
+plt.ylabel('Rate of survival')
+plt.xlabel('Age ranges for men')
+men_survival.savefig("MenSurvivalGraph")
+
