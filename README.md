@@ -241,3 +241,28 @@ aplicam `unique()`, calculam numarul de titluri pentru fiecare categorie si cons
 ![Title Graph!](/ParteaI/Surse/Task9_TitleGraph.png "Title Graph")
 
 > Se observa predominanta titlurilor masculine, care se potriveste cu raportul barbati/femei
+
+## Cerinta 10
+
+Pentru ultima cerinta, avem de studiat cum se influenteaza datele din anumite coloane, asa ca
+folosim `seaborn` pentru ilustrarea acestor relatii:
+
+```
+import seaborn as sns
+```
+
+Pentru a calcula rata de supravietuire pe baza numarului de membri ai familiei, construim coloana
+*'Family members'*:
+```
+df['Family members'] = df['SibSp'] + df['Parch']
+```
+
+Pe baza datelor din aceasta categorie si din coloana *'Survived'* obtinem histograma:
+
+![Family Graph!](/ParteaI/Surse/Task10_FamilyGraph.png "Family Graph")
+
+Pentru studierea relatiei dintre pretul platit, clasa si rata de supravietuire, avem
+nevoie de `catplot()`, unde alegem optiunea `swarm` pentru o reprezentare adecvata:
+
+![Relation Graph!](/ParteaI/Surse/Task10_RelationGraph.png "Relation Graph")
+
