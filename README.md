@@ -206,7 +206,7 @@ survived_children = ((df['Age'] < 18) & (df['Survived'] == 1)).sum() / total_chi
 ```
 Acesta este graful care ilustreaza rezultatele obtinute:
 
-![Children Stats Graph!](/ParteaI/Surse/Task7_ChildrenStatsGraph.png "Children Stats Graph")
+![Children Stats Graph!](/ParteaI/Surse/Task7_ChildGraph.png "Children Stats Graph")
 
 > Percentage of children passengers: 15.83%  
 > Percentage of adult passengers: 84.17%  
