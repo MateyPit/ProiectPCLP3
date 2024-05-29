@@ -24,8 +24,16 @@ coloana si numarul de valori lipsa din fiecare coloana (In cazul nostru, doar co
 > Age: 177  
 > Cabin: 687  
 > Embarked: 2  
-Pentru afisarea valorilor
 
+Pentru afisarea valorilor lipsa, folosim functia `isnull()`:
+```
+print('Number of missing values for each column: ')  
+print(df.isnull().sum())  
+```
+Pentru afisarea numarului de linii duplicat, folosim functia `duplicated()`:
+```
+print(f'Number of duplicated rows: {df.duplicated().sum()}')
+```
 
 
 ![This is a graph!](/ParteaI/Task3_AgeHistogram.png "Age Histogram")
