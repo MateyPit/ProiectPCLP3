@@ -61,11 +61,11 @@ comanda:
 males = round((df['Sex'] == 'male').sum() / nr_lines * 100, 2)
 ```
 
-Graful pentru procentul de barbati de femei este:
+Graful pentru procentul de barbati si de femei este:
 
 ![Gender Graph!](/ParteaI/Surse/Task2_GenderGraph.png "Gender Graph")
 
-> Numarul de barbati este aproape dublu cel al femeilor
+> Numarul de barbati este aproape dublu cel al femeilor:  
 > Percentage of males: 64.76%  
 > Percentage of females: 35.24%
 
@@ -73,7 +73,7 @@ Si in final, graful care imparte pasagerii dupa clasa:
 
 ![Class Graph!](/ParteaI/Surse/Task2_ClassGraph.png "Class Graph")
 
-> In mod nesurprinzator, jumatate din pasageri erau din a treia clasa
+> In mod nesurprinzator, jumatate din pasageri erau din a treia clasa:  
 > Third class passengers: 55.11%  
 > Second class passengers: 20.65%  
 > First class passengers: 24.24%  
@@ -120,7 +120,7 @@ Ox si Oy.
 In cadrul acestei cerinte, identificam coloanele cu valori lipsa (*NaN*), iar apoi construim
 un obiect `cols` care retine numele acestor coloane si numarul de valori lipsa, precum si o lista
 `list_cols` care retine doar numele coloanelor necesare.
-Primul oara, afisam procentul de celule goale din acea coloana:
+Prima oara, afisam procentul de celule goale din acea coloana:
 ```
 # Numarul de celule goale / numarul de linii * 100
 print(f'Percent of missing data for column "{list_cols[i]}": {round(cols.iloc[i] / lines * 100, 2)}%')
@@ -134,17 +134,17 @@ deceased_stats = df.loc[df['Survived'] == 0, list_cols[i]].isnull().sum()
 Iar apoi calculam procentul in functie de numarul total de celule goale din acea coloana. Astfel, 
 obtinem urmatoarele rezultate:
 
-> Percent of missing data for column "Age": 19.87%
-> People with missing data in column "Age" who have survived: 29.38%
-> People with missing data in column "Age" who have died: 70.62%
->
-> Percent of missing data for column "Cabin": 77.1%
-> People with missing data in column "Cabin" who have survived: 29.99%
-> People with missing data in column "Cabin" who have died: 70.01%
->
-> Percent of missing data for column "Embarked": 0.22%
-> People with missing data in column "Embarked" who have survived: 100.0%
-> People with missing data in column "Embarked" who have died: 0.0%
+> Percent of missing data for column "Age": 19.87%  
+> People with missing data in column "Age" who have survived: 29.38%  
+> People with missing data in column "Age" who have died: 70.62%  
+>  
+> Percent of missing data for column "Cabin": 77.1%  
+> People with missing data in column "Cabin" who have survived: 29.99%  
+> People with missing data in column "Cabin" who have died: 70.01%  
+>  
+> Percent of missing data for column "Embarked": 0.22%  
+> People with missing data in column "Embarked" who have survived: 100.0%  
+> People with missing data in column "Embarked" who have died: 0.0%  
 
 ## Cerinta 5
 
