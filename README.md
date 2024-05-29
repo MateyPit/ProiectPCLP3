@@ -18,12 +18,14 @@ df = pd.read_csv('train.csv')
 ## Cerinta 1
 
 In prima cerinta, se cer cateva informatii de baza despre dataframe-ul creat: Numarul de linii
-(_891_), numarul de coloane (_12_), tipurile de date pentru fiecare coloana si numarul de valori
-lipsa din fiecare coloana (In cazul nostru, doar coloanele 'Age', 'Cabin' si 'Embarked' au 
-valori lipsa):
+(_891_), numarul de coloane (_12_), numarul de linii duplicat, tipurile de date pentru fiecare
+coloana si numarul de valori lipsa din fiecare coloana (In cazul nostru, doar coloanele 'Age',
+'Cabin' si 'Embarked' au valori lipsa):
 > Age: 177  
 > Cabin: 687  
 > Embarked: 2  
+Pentru afisarea valorilor
+
 
 
 ![This is a graph!](/ParteaI/Task3_AgeHistogram.png "Age Histogram")
