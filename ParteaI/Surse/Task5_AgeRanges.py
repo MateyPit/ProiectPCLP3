@@ -25,7 +25,9 @@ plt.bar(graph_ranges, sum_category)
 plt.title("Passengers divided by age ranges")
 plt.xlabel("Age ranges")
 plt.ylabel("Number of Passengers")
-range_bar.savefig("RangeGraph")
+range_bar.savefig("Task5_RangeGraph")
+
+df.to_csv('../Date/task5_train')
 
 # Task 6
 
@@ -48,5 +50,5 @@ plt.title('Rate of survival for men in different age groups')
 plt.ylim(0, 100)
 plt.ylabel('Rate of survival')
 plt.xlabel('Age ranges for men')
-men_survival.savefig("MenSurvivalGraph")
+men_survival.savefig("Task6_MenSurvivalGraph")
 
