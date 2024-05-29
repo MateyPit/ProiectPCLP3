@@ -230,3 +230,14 @@ df[list_cols[i]] = df[list_cols[i]].fillna(mean_value)
 # (...)
 df.to_csv('../Date/task8_train')
 ```
+
+## Cerinta 9
+
+Pentru studierea distributiei titlurilor de noblete, mai intai construim o lista formata doar
+din acestea. Pentru a le identifica in cadrul coloanei *'Name'*, aplicam `str.split()` in functie
+de punct, respectiv virgula (datorita formatului numelor). Dupa ce obtinem doar titlurile dorite,
+aplicam `unique()`, calculam numarul de titluri pentru fiecare categorie si construim graful:
+
+![Title Graph!](/ParteaI/Surse/Task9_TitleGraph.png "Title Graph")
+
+> Se observa predominanta titlurilor masculine, care se potriveste cu raportul barbati/femei
