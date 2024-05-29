@@ -107,7 +107,7 @@ Ox si Oy.
 
 ## Cerinta 4
 
-In cadrul acestei cerinte, identificam coloanele cu valori lipsa (*Nan*), iar apoi construim
+In cadrul acestei cerinte, identificam coloanele cu valori lipsa (*NaN*), iar apoi construim
 un obiect `cols` care retine numele acestor coloane si numarul de valori lipsa, precum si o lista
 `list_cols` care retine doar numele coloanelor necesare.
 Primul oara, afisam procentul de celule goale din acea coloana:
@@ -135,3 +135,34 @@ obtinem urmatoarele rezultate:
 > Percent of missing data for column "Embarked": 0.22%
 > People with missing data in column "Embarked" who have survived: 100.0%
 > People with missing data in column "Embarked" who have died: 0.0%
+
+## Cerinta 5
+
+Pentru aceasta cerinta, avem de creat o noua coloana, care specifica indexul intervalului in care
+se regaseste varsta unui pasager. Construim o lista in care se afla coloana *'Age'*, conditionata
+de intervalele propuse. Pentru crearea noii coloane *'Age Range'*, folosim `select()`, care atribuie
+valorile date, conform conditiilor oferite:
+```
+ranges = [(df['Age'] <= 20),
+          (df['Age'] > 20) & (df['Age'] <= 40),
+          (df['Age'] > 40) & (df['Age'] <= 60),
+          (df['Age'] > 60)]
+
+indexes = [0, 1, 2, 3]
+
+# np.select(conditie, valoare, default)
+df['Age Range'] = np.select(ranges, indexes, np.nan)
+```
+
+Dupa actualizarea dataframe-ului, calculam parametrii necesari pentru construirea unui graf 
+(numarul de celule pentru fiecare interval, inserarea intervalelor in graf, etc.), obtinand in
+final urmatoarea repartizare:
+
+![Age Range Graph!](/ParteaI/Surse/Task5_RangeGraph.png "Age Range Graph")
+
+In final, salvam noul dataframe intr-un fisier nou:
+```
+df.to_csv('../Date/task5_train')
+```
+
+
