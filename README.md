@@ -193,4 +193,22 @@ Graful care ilustreaza rata de supravietuire pentru fiecare interval:
 
 ![Men Survival Graph!](/ParteaI/Surse/Task6_MenSurvivalGraph.png "Men Survival Graph")
 
+## Cerinta 7
 
+Considerand copiii drept pasageri cu varsta mai mica strict de 18 ani, filtram datele
+pentru copii si adulti in functie de valoarea din *'Age'*:
+
+```
+# Numarul total de copii
+total_children = (df['Age'] < 18).sum()
+# Rata de supravietuire pentru copii
+survived_children = ((df['Age'] < 18) & (df['Survived'] == 1)).sum() / total_children * 100
+```
+Acesta este graful care ilustreaza rezultatele obtinute:
+
+![Children Stats Graph!](/ParteaI/Surse/Task7_ChildrenStatsGraph.png "Children Stats Graph")
+
+> Percentage of children passengers: 15.83%  
+> Percentage of adult passengers: 84.17%  
+> Rate of survival for children: 53.98%  
+> Rate of survival for adults: 38.1%  
