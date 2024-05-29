@@ -48,4 +48,4 @@ nr_deceased = 100 - nr_survivors;
 > 1 semnifica faptul ca pasagerul a supravietuit
 
 Acesta este graful `bar` care ilustreaza rata de supravietuire:
-![Survival Graph!](/ParteaI/Task1_SurvivalGraph.png "Survival Graph")
+![Survival Graph!](/ParteaI/Surse/Task2_SurvivalGraph.png "Survival Graph")
