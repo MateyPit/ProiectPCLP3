@@ -7,7 +7,7 @@ de informatii despre pasagerii Titanicului, precum numele, varsta, tariful plati
 rude, etc. Scopul final este obtinerea unor statistici care au potentialul de a prezice sansa
 de supravietuire a unui individ de pe nava Titanic. In Partea I, ne vom axa pe calcularea acestor
 procentaje, vom studia modul in care diferitele caracteristici ale pasagerilor afecteaza aceste
-rezultate si vom incerca sa tragem cateva concluzii pe tiparelor identificate.
+rezultate si vom incerca sa facem cateva observatii pe baza tiparelor identificate.
 
 Primul pas este stocarea datelor din fisierul oferit drept suport, `train.csv`, prin intermediul
 unui ***Dataframe Pandas***:
@@ -65,6 +65,7 @@ Graful pentru procentul de barbati de femei este:
 
 ![Gender Graph!](/ParteaI/Surse/Task2_GenderGraph.png "Gender Graph")
 
+> Numarul de barbati este aproape dublu cel al femeilor
 > Percentage of males: 64.76%  
 > Percentage of females: 35.24%
 
@@ -72,6 +73,7 @@ Si in final, graful care imparte pasagerii dupa clasa:
 
 ![Class Graph!](/ParteaI/Surse/Task2_ClassGraph.png "Class Graph")
 
+> In mod nesurprinzator, jumatate din pasageri erau din a treia clasa
 > Third class passengers: 55.11%  
 > Second class passengers: 20.65%  
 > First class passengers: 24.24%  
@@ -91,17 +93,25 @@ Ox si Oy.
 
 1. Histograma ce ilustreaza distributia varstelor
 
+> Majoritatea pasagerilor aveau intre 20 si 40 de ani
+
 ![Age Histogram!](/ParteaI/Surse/Task3_AgeHistogram.png "Age Histogram")
 
 2. Histograma pentru tarifele platite de pasageri:
+
+> Majoritatea pasagerilor au platit acelasi pret
 
 ![Fare Histogram!](/ParteaI/Surse/Task3_FareHistogram.png "Fare Histogram")
 
 3. Histograma coloanei 'SibSp' (Siblings/Spouses):
 
+> Multi pasageri au avut cel mult o singura ruda
+
 ![SibSp Histogram!](/ParteaI/Surse/Task3_SibSpHistogram.png "SibSp Histogram")
 
 3. Histograma coloanei 'Parch' (Parents/Children):
+
+> Multi pasageri au avut cel mult o singura ruda
 
 ![Parch Histogram!](/ParteaI/Surse/Task3_ParchHistogram.png "Parch Histogram")
 
@@ -164,5 +174,23 @@ In final, salvam noul dataframe intr-un fisier nou:
 ```
 df.to_csv('../Date/task5_train')
 ```
+
+## Cerinta 6
+
+Partea aceasta presupune folosirea dataframe-ului anterior pentru calcularea ratei de
+supravietuire pentru barbati in fiecare interval de varsta. Construim lista `men_rates`, 
+ce contine numarul de barbati din fiecare interval care a supravietuit, iar apoi calculam
+procentajul in functie de `total_men`, numarul de barbati din fiecare interval independent
+de coloana *'Survived'*
+
+```
+men_rates[i] = round(men_rates[i] / total_men * 100, 2)
+```
+
+Graful care ilustreaza rata de supravietuire pentru fiecare interval:
+
+> Tinerii care au intre 0 si 20 de ani au sansa cea mai mare
+
+![Men Survival Graph!](/ParteaI/Surse/Task6_MenSurvivalGraph.png "Men Survival Graph")
 
 
