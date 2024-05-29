@@ -21,9 +21,9 @@ In prima cerinta, se cer cateva informatii de baza despre dataframe-ul creat: Nu
 (_891_), numarul de coloane (_12_), tipurile de date pentru fiecare coloana si numarul de valori
 lipsa din fiecare coloana (In cazul nostru, doar coloanele 'Age', 'Cabin' si 'Embarked' au 
 valori lipsa):
-> Age: 177
-> Cabin: 687
-> Embarked: 2
+> Age: 177  
+> Cabin: 687  
+> Embarked: 2  
 
 
 ![This is a graph!](/ParteaI/Task3_AgeHistogram.png "Age Histogram")
