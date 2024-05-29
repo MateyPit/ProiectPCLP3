@@ -39,7 +39,7 @@ class_members = np.array([first_class, second_class, third_class])
 
 ClassGraph = plt.figure()
 plt.bar(classes, class_members)
-plt.title("Passanger divided by class")
+plt.title("Passengers divided by class")
 plt.xlabel("Classes")
 plt.ylabel("Percentage")
 plt.ylim(0, 100)
