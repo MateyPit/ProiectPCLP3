@@ -44,7 +44,7 @@ cu doua zecimale:
 nr_survivors = round(df['Survived'].sum() / nr_lines * 100, 2)
 nr_deceased = 100 - nr_survivors;
 ```
-> OBS: Aceasta modalitate functioneaza deoarece aceasta coloana are doar valori de 0 si 1, unde
+> OBSERVATIE: Aceasta modalitate functioneaza deoarece aceasta coloana are doar valori de 0 si 1, unde
 > 1 semnifica faptul ca pasagerul a supravietuit
 
 Acesta este graful de tip `bar` care ilustreaza rata de supravietuire:
@@ -65,7 +65,7 @@ Graful pentru procentul de barbati de femei este:
 
 ![Gender Graph!](/ParteaI/Surse/Task2_GenderGraph.png "Gender Graph")
 
-> Percentage of males: 64.76%
+> Percentage of males: 64.76%  
 > Percentage of females: 35.24%
 
 Si in final, graful care imparte pasagerii dupa clasa:
@@ -74,4 +74,33 @@ Si in final, graful care imparte pasagerii dupa clasa:
 
 > Third class passengers: 55.11%  
 > Second class passengers: 20.65%  
-> First class passengers: 24.24%
+> First class passengers: 24.24%  
+
+## Cerinta 3
+
+In aceasta sectiune, focusul se muta pe reprezentarea anumitor distributii de frecvente pentru
+informatiile din dataframe. Pentru aceste ilustrari, folosim ***histograme***, folosind ca 
+suport libraria *Matplotlib*:
+```
+import matplotlib.pyplot as plt
+```
+
+Tot ce avem de facut este sa extragem coloana dorita, aplicam `plt.hist()` asupra acesteia 
+si schimbam cateva caracteristici ale grafului, precum titlul, numele si limitele pentru axele
+Ox si Oy.
+
+1. Histograma ce ilustreaza distributia varstelor
+
+![Age Histogram!](/ParteaI/Surse/Task3_AgeHistogram.png "Age Histogram")
+
+2. Histograma pentru tarifele platite de pasageri:
+
+![Fare Histogram!](/ParteaI/Surse/Task3_FareHistogram.png "Fare Histogram")
+
+3. Histograma coloanei 'SibSp' (Siblings/Spouses):
+
+![SibSp Histogram!](/ParteaI/Surse/Task3_SibSpHistogram.png "SibSp Histogram")
+
+3. Histograma coloanei 'Parch' (Parents/Children):
+
+![Parch Histogram!](/ParteaI/Surse/Task3_ParchHistogram.png "Parch Histogram")
