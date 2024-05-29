@@ -9,4 +9,14 @@ de supravietuire a unui individ de pe nava Titanic. In Partea I, ne vom axa pe c
 procentaje, vom studia modul in care diferitele caracteristici ale pasagerilor afecteaza aceste
 rezultate si vom incerca sa tragem cateva concluzii pe tiparelor identificate.
 
+Primul pas este stocarea datelor din fisierul oferit drept suport, 'train.csv', prin intermediul
+unui *Dataframe Pandas*:
+```
+df = pd.read_csv('train.csv')
+```
+
+## Cerinta 1
+
+
+
 ![This is a graph!](/ParteaI/Task3_AgeHistogram.png "Age Histogram")
