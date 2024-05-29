@@ -22,3 +22,5 @@ for i in range(0, len(list_cols)):
         mean_value = (df.loc[df['Survived'] == 1, list_cols[i]]).mode()[0]
         print(f'Most common value for "{list_cols[i]}": {mean_value}')
     df[list_cols[i]] = df[list_cols[i]].fillna(mean_value)
+
+df.to_csv('../Date/task8_train')
