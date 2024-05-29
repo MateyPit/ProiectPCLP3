@@ -35,5 +35,17 @@ Pentru afisarea numarului de linii duplicat, folosim functia `duplicated()`:
 print(f'Number of duplicated rows: {df.duplicated().sum()}')
 ```
 
+## Cerinta 2
+
+A doua cerinta propune calcularea unor statistici bazate pe cate o singura coloana.
+Pentru coloana *'Survived'*, calculam suma valorilor din celule si calculam procentajul, rotunjit
+cu doua zecimale:
+```
+nr_survivors = round(df['Survived'].sum() / nr_lines * 100, 2)
+nr_deceased = 100 - nr_survivors;
+```
+> OBS: Aceasta modalitate functioneaza deoarece aceasta coloana are doar valori de 0 si 1, unde
+> 1 semnifica faptul ca pasagerul a supravietuit
+
 
 ![This is a graph!](/ParteaI/Task3_AgeHistogram.png "Age Histogram")
