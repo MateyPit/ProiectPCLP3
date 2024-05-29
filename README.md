@@ -19,8 +19,8 @@ df = pd.read_csv('train.csv')
 
 In prima cerinta, se cer cateva informatii de baza despre dataframe-ul creat: Numarul de linii
 (_891_), numarul de coloane (_12_), numarul de linii duplicat, tipurile de date pentru fiecare
-coloana si numarul de valori lipsa din fiecare coloana (In cazul nostru, doar coloanele 'Age',
-'Cabin' si 'Embarked' au valori lipsa):
+coloana si numarul de valori lipsa din fiecare coloana (In cazul nostru, doar coloanele *'Age'*,
+*'Cabin'* si *'Embarked'* au valori lipsa):
 > Age: 177  
 > Cabin: 687  
 > Embarked: 2  
@@ -47,5 +47,31 @@ nr_deceased = 100 - nr_survivors;
 > OBS: Aceasta modalitate functioneaza deoarece aceasta coloana are doar valori de 0 si 1, unde
 > 1 semnifica faptul ca pasagerul a supravietuit
 
-Acesta este graful `bar` care ilustreaza rata de supravietuire:
+Acesta este graful de tip `bar` care ilustreaza rata de supravietuire:
+
 ![Survival Graph!](/ParteaI/Surse/Task2_SurvivalGraph.png "Survival Graph")
+
+> Survivors: 38.38%  
+> Deceased: 61.62%
+
+Pentru calcularea statisticilor pentru coloanele *'Pclass'* si *'Sex'*, nu putem folosi acceasi
+tehnica, ci conditionam coloanele. Spre exemplu, pentru obtinerea procentului de barbati, folosim
+comanda:
+```
+males = round((df['Sex'] == 'male').sum() / nr_lines * 100, 2)
+```
+
+Graful pentru procentul de barbati de femei este:
+
+![Gender Graph!](/ParteaI/Surse/Task2_GenderGraph.png "Gender Graph")
+
+> Percentage of males: 64.76%
+> Percentage of females: 35.24%
+
+Si in final, graful care imparte pasagerii dupa clasa:
+
+![Class Graph!](/ParteaI/Surse/Task2_ClassGraph.png "Class Graph")
+
+> Third class passengers: 55.11%  
+> Second class passengers: 20.65%  
+> First class passengers: 24.24%
