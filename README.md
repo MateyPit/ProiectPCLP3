@@ -47,5 +47,5 @@ nr_deceased = 100 - nr_survivors;
 > OBS: Aceasta modalitate functioneaza deoarece aceasta coloana are doar valori de 0 si 1, unde
 > 1 semnifica faptul ca pasagerul a supravietuit
 
-
-![This is a graph!](/ParteaI/Task3_AgeHistogram.png "Age Histogram")
+Acesta este graful `bar` care ilustreaza rata de supravietuire:
+![Survival Graph!](/ParteaI/Task1_SurvivalGraph.png "Survival Graph")
