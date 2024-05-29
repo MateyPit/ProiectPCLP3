@@ -104,3 +104,34 @@ Ox si Oy.
 3. Histograma coloanei 'Parch' (Parents/Children):
 
 ![Parch Histogram!](/ParteaI/Surse/Task3_ParchHistogram.png "Parch Histogram")
+
+## Cerinta 4
+
+In cadrul acestei cerinte, identificam coloanele cu valori lipsa (*Nan*), iar apoi construim
+un obiect `cols` care retine numele acestor coloane si numarul de valori lipsa, precum si o lista
+`list_cols` care retine doar numele coloanelor necesare.
+Primul oara, afisam procentul de celule goale din acea coloana:
+```
+# Numarul de celule goale / numarul de linii * 100
+print(f'Percent of missing data for column "{list_cols[i]}": {round(cols.iloc[i] / lines * 100, 2)}%')
+```
+Mai departe, calculam numarul de persoane ale caror detalii lipsesc din coloana curenta, dar au 
+supravietuit/murit:
+```
+survival_stats = df.loc[df['Survived'] == 1, list_cols[i]].isnull().sum()
+deceased_stats = df.loc[df['Survived'] == 0, list_cols[i]].isnull().sum()
+```
+Iar apoi calculam procentul in functie de numarul total de celule goale din acea coloana. Astfel, 
+obtinem urmatoarele rezultate:
+
+> Percent of missing data for column "Age": 19.87%
+> People with missing data in column "Age" who have survived: 29.38%
+> People with missing data in column "Age" who have died: 70.62%
+>
+> Percent of missing data for column "Cabin": 77.1%
+> People with missing data in column "Cabin" who have survived: 29.99%
+> People with missing data in column "Cabin" who have died: 70.01%
+>
+> Percent of missing data for column "Embarked": 0.22%
+> People with missing data in column "Embarked" who have survived: 100.0%
+> People with missing data in column "Embarked" who have died: 0.0%
