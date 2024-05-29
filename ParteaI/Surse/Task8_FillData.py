@@ -12,8 +12,6 @@ cols = missing_data_cols[missing_data_cols > 0]
 
 list_cols = list(cols.index)
 
-df.loc[df['Survived'] == 1, 'Age'].mean()
-
 for i in range(0, len(list_cols)):
     try:
         mean_value = round(df.loc[df['Survived'] == 1, list_cols[i]].mean())
