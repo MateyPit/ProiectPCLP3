@@ -212,3 +212,21 @@ Acesta este graful care ilustreaza rezultatele obtinute:
 > Percentage of adult passengers: 84.17%  
 > Rate of survival for children: 53.98%  
 > Rate of survival for adults: 38.1%  
+
+## Cerinta 8
+
+Obiectivul in aceasta cerinta este sa 'umplem' celulele goale cu valorea medie din coloana
+respectiva (sau cea mai comuna, pentru valori care nu sunt numerice). Procedam la fel ca la
+**Cerinta 4** si calculam media cu `mean()` si valoarea cea mai comuna cu `mode()`:
+
+> Average value for "Age": 28  
+> Most common value for "Cabin": B96 B98  
+> Most common value for "Embarked": S  
+
+Pentru umplerea celulelor goale, folosim `fillna()` si apoi salvam noul dataframe:
+
+```
+df[list_cols[i]] = df[list_cols[i]].fillna(mean_value)
+# (...)
+df.to_csv('../Date/task8_train')
+```
