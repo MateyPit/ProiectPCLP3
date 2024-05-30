@@ -5,12 +5,14 @@ import numpy as np
 df = pd.read_csv('train.csv')
 
 nr_lines = len(df)
+# Putem calcula doar suma elementelor, deoarece sunt 1 sau 0
 nr_survivors = round(df['Survived'].sum() / nr_lines * 100, 2)
 nr_deceased = 100 - nr_survivors;
 print('Percentages for given data:')
 print(f'Survivors: {nr_survivors}%')
 print(f'Deceased: {nr_deceased}%')
 
+# Conditionam coloana in functie de valorile cerute
 third_class = round((df['Pclass'] == 3).sum() / nr_lines * 100, 2)
 second_class = round((df['Pclass'] == 2).sum() / nr_lines * 100, 2)
 first_class = round((df['Pclass'] == 1).sum() / nr_lines * 100, 2)
@@ -23,6 +25,7 @@ females = round((df['Sex'] == 'female').sum() / nr_lines * 100, 2)
 print(f'Percentage of men: {males}%')
 print(f'Percentage of females: {females}%')
 
+# Cream array-uri pentru numarul de pasageri si categorii
 state = np.array(["Survivors", "Deceased"])
 rates = np.array([nr_survivors, nr_deceased])
 
@@ -31,6 +34,7 @@ plt.bar(state, rates)
 plt.title("Survival Rate")
 plt.xlabel("State")
 plt.ylabel("Percentage")
+# Pentru a ilustra procentajele corespunzator
 plt.ylim(0, 100)
 SurvivalGraph.savefig('Task2_SurvivalGraph')
 

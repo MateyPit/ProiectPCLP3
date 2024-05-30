@@ -5,6 +5,7 @@ import seaborn as sns
 
 df = pd.read_csv('train.csv')
 
+# Coloana cu numarul total de membrii
 df['Family members'] = df['SibSp'] + df['Parch']
 
 family_hist = plt.figure()

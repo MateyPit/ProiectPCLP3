@@ -7,18 +7,22 @@ df = pd.read_csv('train.csv')
 df['Name'] = df['Name'].str.split(',')
 
 for i in range(len(df)):
+    # Selectam partea de dupa primul nume
     df.loc[i, 'Name'] = df['Name'][i][1]
 
 df['Name'] = df['Name'].str.split('.')
 
 for i in range(len(df)):
+    # Selectam doar titlul
     df.loc[i, 'Name'] = df['Name'][i][0]
 
+# Toate titlurile, o singura data
 titles = df['Name'].unique()
 
 title_number = []
 
 for i in range(len(titles)):
+    # Numarul de repetari ale titlului
     title_number.append(round((df['Name'] == titles[i]).sum()))
 
 title_graph = plt.figure(figsize=(16, 6))
